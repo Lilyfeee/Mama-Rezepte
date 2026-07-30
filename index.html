@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>媽媽的食譜書</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hdr">
+    <div class="hl">
+      <button class="stog" id="stog">&#9776;</button>
+      <button class="hbtn" onclick="showHome()">🏠 <span id="lh"></span></button>
+      <span class="sname" id="sn"></span>
+    </div>
+    <div class="lsw">
+      <button class="lb active" id="lb-hant" onclick="setLang('zh-Hant')">繁體</button>
+      <button class="lb" id="lb-hans" onclick="setLang('zh-Hans')">简体</button>
+      <button class="lb" id="lb-de" onclick="setLang('de')">DE</button>
+      <button class="lb" id="lb-en" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+  <div class="lay">
+    <aside class="sb" id="sb">
+      <div class="sb-hd" id="sbhd"></div>
+      <div id="cl"></div>
+    </aside>
+    <div class="sov" id="sov"></div>
+    <main class="main">
+      <div id="ph">
+        <div class="hfl">🌸</div>
+        <h1 class="htit" id="ht"></h1>
+        <p class="hsub" id="hs"></p>
+        <div class="hmsg" id="hm"></div>
+        <button class="hcta" id="hc" onclick="showList(null)"></button>
+        <div class="hst">
+          <div><div class="stn" id="stot">0</div><div class="stlb" id="srl"></div></div>
+          <div><div class="stn">4</div><div class="stlb" id="sll"></div></div>
+          <div><div class="stn">7</div><div class="stlb" id="scl"></div></div>
+        </div>
+      </div>
+      <div id="pl">
+        <div class="phd">
+          <span class="phi" id="li">🍽️</span>
+          <h2 id="lhd"></h2>
+          <span class="phc" id="lct"></span>
+        </div>
+        <div class="swrp"><input type="text" id="si" /></div>
+        <div class="rg" id="rg"></div>
+      </div>
+      <div id="pd">
+        <button class="bbtn" onclick="goBack()">← <span id="lb2"></span></button>
+        <div class="dhdr">
+          <div class="dic" id="di"></div>
+          <div class="dinfo">
+            <h1 id="dt"></h1>
+            <p class="dd" id="dd"></p>
+            <div class="dmt" id="dm"></div>
+          </div>
+        </div>
+        <div class="db">
+          <div>
+            <div class="ds">
+              <div class="dsh" id="dit"></div>
+              <ul class="il" id="dil"></ul>
+            </div>
+            <div class="ds" id="dns" style="display:none">
+              <div class="dsh" id="dnt"></div>
+              <div class="nc" id="dn"></div>
+            </div>
+          </div>
+          <div>
+            <div class="ds">
+              <div class="dsh" id="dst"></div>
+              <ol class="sl" id="dsl"></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="tbar" id="tb">
+    <div class="tl" id="tl"></div>
+    <div class="td" id="tdisp">00:00</div>
+    <div class="tdn" id="tdn"></div>
+    <div class="tc">
+      <button onclick="pauseTimer()" id="tpb">⏸</button>
+      <button onclick="stopTimer()">✕</button>
+    </div>
+  </div>
+  <script src="js/i18n.js"></script>
+  <script src="data/bread.js"></script>
+  <script src="data/pasta.js"></script>
+  <script src="data/meat.js"></script>
+  <script src="data/soup.js"></script>
+  <script src="data/baking.js"></script>
+  <script src="data/dessert.js"></script>
+  <script src="data/drinks.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
