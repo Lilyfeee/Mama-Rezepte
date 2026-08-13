@@ -1,6 +1,167 @@
-const MEAT_RECIPES=[
-['meat','🍗',1,{'zh-Hant':{t:'日式炸雞（唐揚げ）',d:'至少醃製30分鐘，隔夜更佳',z:[['300克','雞腿肉（帶皮去骨）'],['2湯匙','醬油'],['2湯匙','味醂'],['2湯匙','清酒'],['1茶匙','磨碎的薑'],['1茶匙','磨碎的蒜'],['適量','鹽和胡椒'],['適量','土豆澱粉'],['適量','植物油']],s:[['準備','雞肉切成一口大小，放入密封袋。',0],['醃製','加入醃料，充分按摩，冰箱醃製至少30分鐘。',1800],['裹粉','均勻裹上土豆澱粉。',0],['油炸','中高火炸約8分鐘至金黃色。',480],['上桌','配上沙拉、檸檬和Kewpie蛋黃醬。',0]],n:'可以在蛋黃醬中加入七味唐辛子。'},'zh-Hans':{t:'日式炸鸡（唐扬げ）',d:'至少腌制30分钟，隔夜更佳',z:[['300克','鸡腿肉（带皮去骨）'],['2汤匙','酱油'],['2汤匙','味醂'],['2汤匙','清酒'],['1茶匙','磨碎的姜'],['1茶匙','磨碎的蒜'],['适量','盐和胡椒'],['适量','土豆淀粉'],['适量','植物油']],s:[['准备','鸡肉切成一口大小，放入密封袋。',0],['腌制','加入腌料，充分按摩，冰箱腌制至少30分钟。',1800],['裹粉','均匀裹上土豆淀粉。',0],['油炸','中高火炸约8分钟至金黄色。',480],['上桌','配上沙拉、柠檬和Kewpie蛋黄酱。',0]],n:'可以在蛋黄酱中加入七味唐辛子。'},de:{t:'Karaage (Japanisches Hähnchen)',d:'Mind. 30 min marinieren, gerne über Nacht',z:[['300 g','Hähnchenschenkel (mit Haut, ohne Knochen)'],['2 EL','Sojasauce'],['2 EL','Mirin'],['2 EL','Sake (alternativ Weißwein)'],['1 TL','geriebener Ingwer'],['1 TL','geriebener Knoblauch'],['nach Gesch.','Salz und Pfeffer'],['nach Bedarf','Kartoffelmehl'],['nach Bedarf','Pflanzenöl']],s:[['Vorbereiten','Hähnchen in Stücke schneiden, in Gefrierbeutel.',0],['Marinieren','Marinade-Zutaten dazu, gut massieren. Mind. 30 min Kühlschrank.',1800],['Bestäuben','Mit Kartoffelmehl gut bestäuben.',0],['Frittieren','Ca. 8 min bei mittelhoher Hitze goldbraun frittieren.',480],['Servieren','Mit Salat, Zitrone und Kewpie-Mayo servieren.',0]],n:'Optional: Shichimi Togarashi zur Mayo.'},en:{t:'Karaage (Japanese Fried Chicken)',d:'Marinate at least 30 min, overnight is best',z:[['300 g','Chicken thighs (skin-on, boneless)'],['2 tbsp','Soy sauce'],['2 tbsp','Mirin'],['2 tbsp','Sake (or white wine)'],['1 tsp','Grated ginger'],['1 tsp','Grated garlic'],['to taste','Salt & pepper'],['as needed','Potato starch'],['as needed','Vegetable oil']],s:[['Prep','Cut chicken into bite-sized pieces, place in zip-lock bag.',0],['Marinate','Add marinade, massage well. Fridge min. 30 min.',1800],['Coat','Coat generously with potato starch.',0],['Fry','Fry ~8 min at medium-high heat until golden.',480],['Serve','Serve with salad, lemon wedge and Kewpie mayo.',0]],n:'Optional: add Shichimi Togarashi to the mayo.'}}],
-['meat','🐟',2,{'zh-Hant':{t:'金槍魚燕麥粥',d:'高蛋白，快手',z:[['250-500毫升','高湯'],['40-60克','細燕麥'],['2-3個','雞蛋'],['1罐','金槍魚（原汁）'],['適量','鹽、胡椒、辣椒']],s:[['煮粥','高湯煮沸，加入燕麥，不斷攪拌。',300],['雞蛋','粥變稠時，打入雞蛋，繼續攪拌。',120],['完成','離火，加入金槍魚，調味。',0]]},'zh-Hans':{t:'金枪鱼燕麦粥',d:'高蛋白，快手',z:[['250-500毫升','高汤'],['40-60克','细燕麦'],['2-3个','鸡蛋'],['1罐','金枪鱼（原汁）'],['适量','盐、胡椒、辣椒']],s:[['煮粥','高汤煮沸，加入燕麦，不断搅拌。',300],['鸡蛋','粥变稠时，打入鸡蛋，继续搅拌。',120],['完成','离火，加入金枪鱼，调味。',0]]},de:{t:'Thunfisch-Haferflockenbrei',d:'Hochprotein, schnell',z:[['250-500 ml','Brühe'],['40-60 g','Haferflocken (zart)'],['2-3','Eier'],['1 Dose','Thunfisch in eigenem Saft'],['nach Gesch.','Salz, Pfeffer, Chili']],s:[['Brei','Brühe aufkochen, Haferflocken rein, ständig rühren.',300],['Eier','Wenn Brei entsteht, Eier reinschlagen, weiter rühren.',120],['Fertig','Vom Herd, Thunfisch dazu, abschmecken.',0]]},en:{t:'Tuna Oat Porridge',d:'High-protein, quick',z:[['250-500 ml','Broth'],['40-60 g','Fine oats'],['2-3','Eggs'],['1 can','Tuna in own juice'],['to taste','Salt, pepper, chilli']],s:[['Porridge','Bring broth to boil, add oats, stir constantly.',300],['Eggs','When thick, crack in eggs and keep stirring.',120],['Done','Remove from heat, add tuna, season.',0]]}}],
+const MEAT_RECIPES = [
+
+['meat', '🍗', 1, {
+  'zh-Hant': {
+    t: '日式炸雞（唐揚げ）',
+    d: '至少醃製30分鐘，隔夜更佳',
+    z: [
+      ['300克', '雞腿肉（帶皮去骨）'],
+      ['2湯匙', '醬油'],
+      ['2湯匙', '味醂'],
+      ['2湯匙', '清酒'],
+      ['1茶匙', '磨碎的薑'],
+      ['1茶匙', '磨碎的蒜'],
+      ['適量', '鹽和胡椒'],
+      ['適量', '土豆澱粉'],
+      ['適量', '植物油'],
+    ],
+    s: [
+      ['準備', '雞肉切成一口大小，放入密封袋。', 0],
+      ['醃製', '加入醃料，充分按摩，冰箱醃製至少30分鐘。', 1800],
+      ['裹粉', '均勻裹上土豆澱粉。', 0],
+      ['油炸', '中高火炸約8分鐘至金黃色。', 480],
+      ['上桌', '配上沙拉、檸檬和Kewpie蛋黃醬。', 0],
+    ],
+    n: '可以在蛋黃醬中加入七味唐辛子。',
+  },
+  'zh-Hans': {
+    t: '日式炸鸡（唐扬げ）',
+    d: '至少腌制30分钟，隔夜更佳',
+    z: [
+      ['300克', '鸡腿肉（带皮去骨）'],
+      ['2汤匙', '酱油'],
+      ['2汤匙', '味醂'],
+      ['2汤匙', '清酒'],
+      ['1茶匙', '磨碎的姜'],
+      ['1茶匙', '磨碎的蒜'],
+      ['适量', '盐和胡椒'],
+      ['适量', '土豆淀粉'],
+      ['适量', '植物油'],
+    ],
+    s: [
+      ['准备', '鸡肉切成一口大小，放入密封袋。', 0],
+      ['腌制', '加入腌料，充分按摩，冰箱腌制至少30分钟。', 1800],
+      ['裹粉', '均匀裹上土豆淀粉。', 0],
+      ['油炸', '中高火炸约8分钟至金黄色。', 480],
+      ['上桌', '配上沙拉、柠檬和Kewpie蛋黄酱。', 0],
+    ],
+    n: '可以在蛋黄酱中加入七味唐辛子。',
+  },
+  de: {
+    t: 'Karaage (Japanisches Hähnchen)',
+    d: 'Mind. 30 min marinieren, gerne über Nacht',
+    z: [
+      ['300 g', 'Hähnchenschenkel (mit Haut, ohne Knochen)'],
+      ['2 EL', 'Sojasauce'],
+      ['2 EL', 'Mirin'],
+      ['2 EL', 'Sake (alternativ Weißwein)'],
+      ['1 TL', 'geriebener Ingwer'],
+      ['1 TL', 'geriebener Knoblauch'],
+      ['nach Gesch.', 'Salz und Pfeffer'],
+      ['nach Bedarf', 'Kartoffelmehl'],
+      ['nach Bedarf', 'Pflanzenöl'],
+    ],
+    s: [
+      ['Vorbereiten', 'Hähnchen in Stücke schneiden, in Gefrierbeutel.', 0],
+      ['Marinieren', 'Marinade-Zutaten dazu, gut massieren. Mind. 30 min Kühlschrank.', 1800],
+      ['Bestäuben', 'Mit Kartoffelmehl gut bestäuben.', 0],
+      ['Frittieren', 'Ca. 8 min bei mittelhoher Hitze goldbraun frittieren.', 480],
+      ['Servieren', 'Mit Salat, Zitrone und Kewpie-Mayo servieren.', 0],
+    ],
+    n: 'Optional: Shichimi Togarashi zur Mayo.',
+  },
+  en: {
+    t: 'Karaage (Japanese Fried Chicken)',
+    d: 'Marinate at least 30 min, overnight is best',
+    z: [
+      ['300 g', 'Chicken thighs (skin-on, boneless)'],
+      ['2 tbsp', 'Soy sauce'],
+      ['2 tbsp', 'Mirin'],
+      ['2 tbsp', 'Sake (or white wine)'],
+      ['1 tsp', 'Grated ginger'],
+      ['1 tsp', 'Grated garlic'],
+      ['to taste', 'Salt & pepper'],
+      ['as needed', 'Potato starch'],
+      ['as needed', 'Vegetable oil'],
+    ],
+    s: [
+      ['Prep', 'Cut chicken into bite-sized pieces, place in zip-lock bag.', 0],
+      ['Marinate', 'Add marinade, massage well. Fridge min. 30 min.', 1800],
+      ['Coat', 'Coat generously with potato starch.', 0],
+      ['Fry', 'Fry ~8 min at medium-high heat until golden.', 480],
+      ['Serve', 'Serve with salad, lemon wedge and Kewpie mayo.', 0],
+    ],
+    n: 'Optional: add Shichimi Togarashi to the mayo.',
+  },
+}],
+
+['meat', '🐟', 2, {
+  'zh-Hant': {
+    t: '金槍魚燕麥粥',
+    d: '高蛋白，快手',
+    z: [
+      ['250-500毫升', '高湯'],
+      ['40-60克', '細燕麥'],
+      ['2-3個', '雞蛋'],
+      ['1罐', '金槍魚（原汁）'],
+      ['適量', '鹽、胡椒、辣椒'],
+    ],
+    s: [
+      ['煮粥', '高湯煮沸，加入燕麥，不斷攪拌。', 300],
+      ['雞蛋', '粥變稠時，打入雞蛋，繼續攪拌。', 120],
+      ['完成', '離火，加入金槍魚，調味。', 0],
+    ],
+  },
+  'zh-Hans': {
+    t: '金枪鱼燕麦粥',
+    d: '高蛋白，快手',
+    z: [
+      ['250-500毫升', '高汤'],
+      ['40-60克', '细燕麦'],
+      ['2-3个', '鸡蛋'],
+      ['1罐', '金枪鱼（原汁）'],
+      ['适量', '盐、胡椒、辣椒'],
+    ],
+    s: [
+      ['煮粥', '高汤煮沸，加入燕麦，不断搅拌。', 300],
+      ['鸡蛋', '粥变稠时，打入鸡蛋，继续搅拌。', 120],
+      ['完成', '离火，加入金枪鱼，调味。', 0],
+    ],
+  },
+  de: {
+    t: 'Thunfisch-Haferflockenbrei',
+    d: 'Hochprotein, schnell',
+    z: [
+      ['250-500 ml', 'Brühe'],
+      ['40-60 g', 'Haferflocken (zart)'],
+      ['2-3', 'Eier'],
+      ['1 Dose', 'Thunfisch in eigenem Saft'],
+      ['nach Gesch.', 'Salz, Pfeffer, Chili'],
+    ],
+    s: [
+      ['Brei', 'Brühe aufkochen, Haferflocken rein, ständig rühren.', 300],
+      ['Eier', 'Wenn Brei entsteht, Eier reinschlagen, weiter rühren.', 120],
+      ['Fertig', 'Vom Herd, Thunfisch dazu, abschmecken.', 0],
+    ],
+  },
+  en: {
+    t: 'Tuna Oat Porridge',
+    d: 'High-protein, quick',
+    z: [
+      ['250-500 ml', 'Broth'],
+      ['40-60 g', 'Fine oats'],
+      ['2-3', 'Eggs'],
+      ['1 can', 'Tuna in own juice'],
+      ['to taste', 'Salt, pepper, chilli'],
+    ],
+    s: [
+      ['Porridge', 'Bring broth to boil, add oats, stir constantly.', 300],
+      ['Eggs', 'When thick, crack in eggs and keep stirring.', 120],
+      ['Done', 'Remove from heat, add tuna, season.', 0],
+    ],
+  },
+}],
+
 ['meat', '🍗', 2, {
   'zh-Hant': {
     t: '健康雞塊（3種食材）',
@@ -488,4 +649,5 @@ const MEAT_RECIPES=[
     ],
   },
 }],
+
 ];
